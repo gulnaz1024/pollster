@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Question(models.Model):
-    question_text = models.CharField(max_length=200)
+    question_text = models.FileField(upload_to='documents/1.txt')
     pub_date = models.DateTimeField('date published')
 
     def __str__(self):
@@ -16,3 +16,5 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+

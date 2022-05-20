@@ -63,3 +63,4 @@ def resultsData(request, obj):
 
     print(votedata)
     return JsonResponse(votedata, safe=False)
+
