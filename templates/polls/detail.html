@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-<a class="btn btn-secondary btn-sm mb-3" href="{% url 'polls:index' %}">Back To Polls</a>
-<h1 class="text-center mb-3">{{ question.question_text }}</h1>
+<style>
+    body{
+        background-image: url('https://d3t4nwcgmfrp9x.cloudfront.net/upload/resolver-dudas-fiscales.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+<body>
+<a class="btn btn-secondary" href="{% url 'polls:index' %}">Back To Polls</a>
+<br>
+<br>
+
+<h1 class="text-center mb-3"  style="background-color:rgb(56, 51, 51);
+color:white;">{{ question.question_text }}</h1>
 
 {% if error_message %}
 <p class="alert alert-danger">
@@ -9,7 +22,12 @@
 </p>
 {% endif %}
 
-<form action="{% url 'polls:vote' question.id %}" method="post">
+<form action="{% url 'polls:vote' question.id %}" method="post" style="background-color:white ;
+border: 5px dashed rgb(73, 3, 3);
+padding-top: 30px;
+padding-right: 30px;
+padding-bottom: 30px;
+padding-left: 30px;">
 	{% csrf_token %} 
 	{% for choice in question.choice_set.all %}
 		<div class="form-check">
@@ -23,7 +41,8 @@
 			<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label
 			>
 		</div>
+	</body>
 	{% endfor %}
-	<input type="submit" value="Vote" class="btn btn-success btn-lg btn-block mt-4" />
+	<input type="submit" value="Vote" class="btn btn-outline-dark btn-lg btn-block" />
 </form>
 {% endblock %}

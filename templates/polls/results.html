@@ -3,50 +3,50 @@
 
 <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+	body{
+		background-image: url('https://wallpaperforu.com/wp-content/uploads/2021/04/Wallpaper-Gradient-Colorful-Abstract-Simple-Minimalism211920x1080.jpg')
+	}
+</style>
+<body>
+<br>
 
-<h1 class="mb-5 text-center">{{ question.question_text }}</h1>
+<h1 class="mb-5 text-center" style="background-color:rgb(244, 246, 247);opacity:1 ;">{{ question.question_text }}</h1>
 
 <ul class="list-group mb-5">
 	{% for choice in question.choice_set.all %}
-	<li class="list-group-item">
-		{{ choice.choice_text }}  <span class="badge badge-success float-right">{{ choice.votes }} vote{{ choice.votes | pluralize }}</span>
+	<li class="list-group-item" style="border: 1px dashed rgb(73, 3, 3);">
+		{{ choice.choice_text }}  <span class="badge badge-success float-right" style="background-color:rgb(126, 93, 115) ;">{{ choice.votes }} vote{{ choice.votes | pluralize }}</span>
 	</li>
 	{% endfor %}
 </ul>
-
 <div id="myChart"></div>
-
-
-<a class="btn btn-secondary" href="{% url 'polls:index' %}">Back To Polls</a>
+<br>
+<br>
+<a class="btn btn-dark" href="{% url 'polls:index' %}">Back To Polls</a>
 <a class="btn btn-dark" href="{% url 'polls:detail' question.id %}">Vote again?</a>
 
 <script>
-
 	var state ={	
 		'items':[],
 		'values':[],
 	}
-
 	var objId = "{{question.id}}"
-
 	var dataURL = `/polls/resultsdata/${objId}/`
+	
 	$.ajax({
 		method:'GET',
 		url:dataURL,
 		success:function(response){
 			console.log('RESPONSE:', response)
 			for (var i in response){
-
 				var key = Object.keys(response[i])[0]
 				var value = Object.values(response[i])[0]
-
 				state.items.push(key)
 				state.values.push(value)
 			}
-
 			console.log('STATE:', state)
 			buildChart()
-
 		}
 	})
 
@@ -62,13 +62,12 @@
 				}
 			]
 		}
-
 		zingchart.render({
 		  id: "myChart",
 		  data: chartData,
 		});
 	}
-	
-</script>
 
+</script>
+</body>	
 {% endblock %}
