@@ -1,19 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<style>
-  body{
-    background-image: url('http://alatoo.edu.kg/image?img=image_19_6849323253376061793.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    }
-</style>
+{% load static %}
+<link rel='stylesheet' href='{% static 'style.css' %}' type='text/css'>
 
-<body>
+ <body id='bg' style="background-image: url('{% static 'media/2.png'  %}');">
+  <!-- <img src = "{% static './media/1.png' %}" > -->
   <br>
   <br>
   <br>
-<div class="card text-center"  style="opacity:0.7 ;font: italic 15px monospace;" >
+<div class="card text-center"  style="font: italic 15px monospace;" >
   <div class="card-body" style="justify-content: center; text-align:center;font-weight:bold;color: #000; background-color: white;" > 
     <h1 style="justify-content: center;">Welcome To Ala-Too!</h1>
     <p>This is an Alatoo polling questions</p>
