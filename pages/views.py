@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate 
 from django.contrib.auth.forms import AuthenticationForm
 from sys import path_importer_cache
-from PIL import Image,ImageDraw, ImageFont
+from PIL import Image
 import os
 from fileinput import filename
 
@@ -24,14 +24,14 @@ def user_register(request):
             for filename in os.listdir('./media'):
                 path_to_img = './media/' + str(filename)
                 img = Image.open(path_to_img)
-                img = img.crop((0, 0, 1080, 1080))
-                
-                grayscale = img.convert('L')
+                # img = img.crop((0, 0, 1080, 1080))
+                img = img.convert('RGB')
+                img.putalpha(127)
                 # grayscale.show()
                 filename = filename.split('.')
                 path_to_edited_img = './media/' + filename[0] + '.png'
-                grayscale.save(path_to_edited_img)
-                os.remove(path_to_img)
+                img.save(path_to_edited_img)
+                # os.remove(path_to_img)
             return render(request, 'pages/register_done.html',context)
             
     return render(request, 'pages/register.html',context)
