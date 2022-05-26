@@ -22,7 +22,7 @@ opacity: 0.8;">
   <form method="POST" action="" >
     {% csrf_token %}
     {{ login_form|crispy }}
-    <button class="btn btn-primary" type="submit">Login</button>
+    <button class="btn btn-primary" type="submit" >Login</button>
   </form>
   <p  class="text-center" >Don't have an account? <a href="/register">Create an account</a>.</p>
 </div>
