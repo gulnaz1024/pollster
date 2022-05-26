@@ -17,7 +17,7 @@
         {% for question in latest_question_list %}
             <div class="card mb-3">
                 <div class="card-body" style="border: 5px dashed rgb(73, 3, 3); background-color: #f5efef;">
-                    <p class="lead">{{ question.question_text }}</p>
+                    <p class="lead">{{ question.data_file }}</p>
                     <a href="{% url 'polls:detail' question.id %}" class="btn btn-primary" style="display: flex;
                     justify-content: center;
                     align-items: center;">Vote Now</a>

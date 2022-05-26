@@ -19,17 +19,20 @@
       }
   </style>
     <body> 
-    {{title}}
-    <form method="POST" action="" style="background-color: white;
+    <div class = "container" style="background-color: white;
     padding-top: 40px;
     padding-right: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     padding-left: 40px;
     opacity: 0.8;">
+    <form method="POST" action="" >
         {% csrf_token %}
         {{form.as_p}}
         <a class="btn btn-outline-dark"> Create User </a>
     </form>
+    <br>
+    <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div>
 </body>
 </html>
 
