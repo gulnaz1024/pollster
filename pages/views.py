@@ -20,16 +20,16 @@ def user_register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
+            a = [] 
             form.save()
-            for filename in os.listdir('./media'):
-                path_to_img = './media/' + str(filename)
+            for filename in os.listdir('./pages/static/media'):
+                path_to_img = './pages/static/media/' + str(filename)
+                a.append(path_to_img)
                 img = Image.open(path_to_img)
-                # img = img.crop((0, 0, 1080, 1080))
                 img = img.convert('RGB')
                 img.putalpha(127)
-                # grayscale.show()
                 filename = filename.split('.')
-                path_to_edited_img = './media/' + filename[0] + '.png'
+                path_to_edited_img = './pages/static/media/' + filename[0] + '.png'
                 img.save(path_to_edited_img)
                 # os.remove(path_to_img)
             return render(request, 'pages/register_done.html',context)
