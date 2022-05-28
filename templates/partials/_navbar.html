@@ -1,9 +1,14 @@
-<nav class="navbar navbar-light" style="background-color: #f5efef; opacity: 0.8;">
+<nav class="navbar navbar-dark mb-4" style="background-color: #456D7A;">
 	<div class="container">
-		<a class="navbar-brand" href="/">Home</a>
+		<a class="navbar-brand" href="/">Pollster</a>
 			<span>
-					<a class="navbar-brand" href="/register">Registration</a>
-					<a class="navbar-brand" href="/login">login</a>
+				{% if user.is_authenticated %}
+					<a class="navbar-brand" href="/profile">Profile</a>
+					<a class="navbar-brand" href="/logout">Logout</a>
+				{% else %}
+					<a class="navbar-brand" href="/login">Login</a>
+					<a class="navbar-brand" href="/register">Register</a>
+				{% endif %}
 		</span>
 	</div>
 </nav>
