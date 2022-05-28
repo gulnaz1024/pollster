@@ -1,16 +1,13 @@
 from django.db import models
-from django.core.files import File
-import sys
+
 
 class Question(models.Model):
-    question_text = models.FilePathField(path='documents/')
-    #question_text = models.FileField(upload_to='documents/') #
+    question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
-    data_file = open('documents/1.txt' , 'r').read()
 
     def __str__(self):
-        return self.data_file #str(self.question_text)
-     
+        return self.question_text
+
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
@@ -19,5 +16,3 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
-
-
