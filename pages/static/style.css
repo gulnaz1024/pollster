@@ -1,8 +1,0 @@
-#bg{
-    /* background: url('/media/1.png');  */
-    /* background-image: url('/media/1.png'); */
-    /* background-image: url('{% static "media/1.png" %}'); */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
