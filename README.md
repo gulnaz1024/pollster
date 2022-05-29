@@ -5,6 +5,7 @@
 App is allow conducts public opinion polls.
 
 _*Superuser*_
+
 _login: admin_   
 _pass: 123_
 
