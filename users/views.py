@@ -20,7 +20,7 @@ def register(request):
                 filename = filename.split('.')
                 path_to_edited_img = './pages/static/images/'+ filename[0] + '.png'
                 img.save(path_to_edited_img)
-                # os.remove(path_to_img)
+                os.remove(path_to_img)
             username = form.cleaned_data.get('username')  # Grab the username that is submitted for now
             messages.success(request, f'Account created for {username}!')
             return redirect('login')
