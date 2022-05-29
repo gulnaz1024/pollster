@@ -11,9 +11,7 @@ This app was created to get the opinion of Ala-Too students. To improve the qual
 
 ## Screeshots
 
-<img src='screenshot/home_page.png' />
-<img src='screenshot/question_page.png' />
-<img src='screenshot/result_page.png' />
+<img src='screenshot/all_pages.png' />
 
 
 
