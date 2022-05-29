@@ -19,7 +19,7 @@ This app was created to get the opinion of Ala-Too students. To improve the qual
 
 ## Photo processing
 
-After clicking on the registration button, all photos in the avatar image folder will be processed.
+After clicking on the register button, all photos in the avatar image folder will be processed: _./pages/static/images_
 
 <img src='screenshot/beforeafter.png' />
 
