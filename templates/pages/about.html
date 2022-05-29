@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% load static %}
+<style>
+#bg{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}</style>
+ <body id='bg' style="background-image: url('{% static 'background/2.jpg'  %}');">
 <div class="card text-center">
   <div class="card-body">
     <h1>Welcome To Ala-Too</h1>
@@ -9,4 +16,5 @@
     <h2>This app was created to get the opinion of Ala-Too students. To improve the quality of education and management at the university. The application allows you to create your profile and this answer questions. </h2>
   </div>
 </div>
+</body>
 {% endblock %}

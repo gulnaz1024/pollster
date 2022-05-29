@@ -9,19 +9,23 @@
 }</style>
 
 <body id='bg2' style="background-image: url('{% static 'background/questions.jpg'  %}');">
-  <div class="card mb-3">
-    <div class="card-body">
+  <div class="card-body card mb-3">
+    
       <h1 class="text-center mb-3">Poll Questions</h1>
+      </div>
         {% if latest_question_list %}
+        
           {% for question in latest_question_list %}
+          <div class="card-body card mb-3">
             <p class="lead">{{ question.question_text }}</p>
             <a href="{% url 'polls:detail' question.id %}" class="btn btn-primary btn-sm">Vote Now</a>
             <a href="{% url 'polls:results' question.id %}" class="btn btn-secondary btn-sm">Results</a>
+          </div>
     {% endfor %}
   {% else %}
     <p>No polls available</p>
   {% endif %}
-</div>
-</div>
+
+
 </body>
 {% endblock %}
