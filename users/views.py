@@ -12,13 +12,13 @@ def register(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            for filename in os.listdir('./static/images/'):
-                path_to_img = './static/images/' + str(filename)
+            for filename in os.listdir('./pages/static/images/'):
+                path_to_img = './pages/static/images/' + str(filename)
                 img = Image.open(path_to_img)
                 img = img.convert('RGB')
                 img.putalpha(127)
                 filename = filename.split('.')
-                path_to_edited_img = './static/images/'+ filename[0] + '.png'
+                path_to_edited_img = './pages/static/images/'+ filename[0] + '.png'
                 img.save(path_to_edited_img)
                 # os.remove(path_to_img)
             username = form.cleaned_data.get('username')  # Grab the username that is submitted for now
