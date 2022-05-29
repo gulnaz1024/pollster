@@ -3,6 +3,8 @@ from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
 from .forms import UserUpdateForm, ProfileUpdateForm
+from PIL import Image
+import os
 
 def register(request):
 
@@ -10,6 +12,15 @@ def register(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
+            for filename in os.listdir('./static/images/'):
+                path_to_img = './static/images/' + str(filename)
+                img = Image.open(path_to_img)
+                img = img.convert('RGB')
+                img.putalpha(127)
+                filename = filename.split('.')
+                path_to_edited_img = './static/images/'+ filename[0] + '.png'
+                img.save(path_to_edited_img)
+                # os.remove(path_to_img)
             username = form.cleaned_data.get('username')  # Grab the username that is submitted for now
             messages.success(request, f'Account created for {username}!')
             return redirect('login')
