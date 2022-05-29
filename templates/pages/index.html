@@ -1,11 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
+<style>
+#bg{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}</style>
+ <body id='bg' style="background-image: url('{% static 'images/2.jpg'  %}');">
+  <!-- <img src = "{% static './media/1.png' %}" > -->
+  <br>
+  <br>
+  <br>
 
-<div class="card text-center">
-  <div class="card-body">
-    <h1>Welcome To Pollster</h1>
-    <p>This is an example Django polling app</p>
-    <a class="btn btn-dark" href="{% url 'polls:index' %}">View Available Polls</a>
+
+  <div class="card text-center"  style="font: 15px monospace;" >
+    <div class="card-body" style="justify-content: center; text-align:center;font-weight:bold;color: #000; background-color: rgb(234, 252, 255);" > 
+      <h1 style="justify-content: center;">Welcome To Ala-Too!</h1>
+      <p>This is an Ala-Too polling questions</p>
+      <a class="btn btn-outline-dark" href="{% url 'polls:index' %}">View Available Polls</a>
+      
+    </div>
   </div>
-  </div>
+  <br>
+  <img src="https://upload.wikimedia.org/wikipedia/en/0/07/Ala-Too_International_University_Seal.png" width="150" height="150" alt="" style="  display: block; margin-left: auto; margin-right: auto;">
+  
+</body>
 {% endblock %}
