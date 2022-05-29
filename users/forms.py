@@ -5,15 +5,15 @@ from .models import Profile
 
 
 class UserRegisterForm(UserCreationForm):
-    email = forms.EmailField() # Required is True in default. So i keep it default
+    email = forms.EmailField()
 
     class Meta:
-        model = User # Whenever the form is validate it is going to create a new user
+        model = User
         fields = ['username', 'email', 'password1', 'password2']
 
 
 class UserUpdateForm(forms.ModelForm):
-    email = forms.EmailField()  # This For Additional Field
+    email = forms.EmailField()
 
     class Meta:
         model = User
