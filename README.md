@@ -1,10 +1,12 @@
-superuser
-login: admin   
-pass: 123
-
 # Pollster
+**by Gimaletdinova Gulnaz** 
+**MAT-20**
+
 App is allow conducts public opinion polls.
 
+_*Superuser*_
+_login: admin_   
+_pass: 123_
 
 ## About Pollster
 This app was created to get the opinion of Ala-Too students. To improve the quality of education and management at the university. The application allows you to create your profile and answer to questions.
@@ -14,23 +16,24 @@ This app was created to get the opinion of Ala-Too students. To improve the qual
 <img src='screenshot/all_pages.png' />
 
 
+## Photo processing
 
 After clicking on the registration button, all photos in the avatar image folder will be processed.
 
 <img src='screenshot/beforeafter.png' />
 
+## Profile
 
 Here you can select a profile photo.
 
 <img src='screenshot/profile.png' />
 
 ## Sources
-Lab work: Pollster(web programing, 2 course)
+Lab work: Pollster(web programing, 2 grade)
 
-Lab work: Registration (web programing, 2 course)
+Lab work: Registration (web programing, 2 grade)
 
-Project: Batch image processing for instagram (programing languages 2, 1 course):
-> [https://github.com/gulnaz1024/Batch-image-processing-for-instagram](https://github.com/gulnaz1024/Batch-image-processing-for-instagram)
+> [Project: Batch image processing for instagram (programing languages 2, 1 grade)](https://github.com/gulnaz1024/Batch-image-processing-for-instagram)
 
 > [https://docs.djangoproject.com/en/4.0/topics/http/file-uploads/](https://docs.djangoproject.com/en/4.0/topics/http/file-uploads/)
 
